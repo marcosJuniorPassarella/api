@@ -31,10 +31,10 @@ router.post('/orders', (req, res) => {
     res.send('OK');
 });
 //Change order status
-router.patch('/orders', (req, res) => {
+router.patch('/orders/:orderId', (req, res) => {
     res.send('OK');
 });
 // Delete/cancel order
-router.delete('/order', (req, res) => {
+router.delete('/order/:orderId', (req, res) => {
     res.send('OK');
 });
