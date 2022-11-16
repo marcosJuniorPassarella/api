@@ -6,7 +6,7 @@ export async function createProducts(req: Request, res: Response) {
         const imagePath = req.file?.filename;
         const { name, description, price, category, ingredients } = req.body;
         const products = await Product.create({
-            name, description, imagePath, price: Number(price), category, ingredients: JSON.parse(ingredients)
+            name, description, imagePath, price: Number(price), category, ingredients: ingredients ? JSON.parse(ingredients) : []
         });
         res.status(201).json(products);
     } catch (error) {
